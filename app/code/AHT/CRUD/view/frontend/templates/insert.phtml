@@ -1,0 +1,19 @@
+
+<h1 style="text-align: center; font-weight:600;color: #28a745">Form Add</h1>
+<form method="post" action="<?= $block->getBaseUrl(); ?>crud/index/save">
+
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="name" class="form-control" >
+    </div>
+  </div>
+  <br>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Content</label>
+    <div class="col-sm-10">
+      <input type="text" name="post_content" class="form-control" >
+    </div>
+  </div>
+  <input type="submit" name="submit" class="btn btn-success"></input>
+</form>

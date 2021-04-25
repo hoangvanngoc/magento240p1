@@ -1,0 +1,39 @@
+<style>
+td{
+    border: 2px solid black;
+}
+
+</style>
+<head>
+    <h1 style="text-align: center; color: violet">CRUD</h1>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Content</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+        <?php
+            $collection = $block->getResult();
+            foreach($collection as $item){
+        ?>
+        <tr>
+            <td><?php echo $item->getData('post_id'); ?></td>
+            <td><?php echo $item->getData('name'); ?></td>
+            <td><?php echo $item->getData('post_content'); ?></td>
+            <td><?php echo $item->getData('created_at'); ?></td>
+            <td><?php echo $item->getData('updated_at'); ?></td>
+            <td class="edit"><a href="<?php echo $block->getUrl('crud/index/edit').'id/'.$item->getData('post_id'); ?>" style="background-color: #343a40;border-color: #343a40" class="action primary">Edit</a></td>
+            <td><a href="<?php echo $block->getUrl('crud/index/delete').'?id='.$item->getData('post_id'); ?>" style="background-color: #dc3545;border-color:#dc3545" class="action primary">Delete</a></td>
+        </tr>
+        <?php } ?>
+    </table>
+</body>
+<br>
+<a style="background-color: #28a745; border-color:#28a745" class="action primary " href="<?= $block->getUrl('crud/index/insert')?> ">Add</a>
+
