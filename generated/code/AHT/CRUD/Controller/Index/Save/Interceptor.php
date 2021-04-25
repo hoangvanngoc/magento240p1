@@ -8,10 +8,10 @@ class Interceptor extends \AHT\CRUD\Controller\Index\Save implements \Magento\Fr
 {
     use \Magento\Framework\Interception\Interceptor;
 
-    public function __construct(\Magento\Framework\App\Action\Context $context, \Magento\Framework\View\Result\PageFactory $pageFactory, \AHT\CRUD\Model\PostFactory $postFactory, \Magento\Framework\Filesystem $filesystem, \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList, \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool, \AHT\CRUD\Model\ResourceModel\PostFactory $saveFactory, \Magento\Framework\Session\SessionManagerInterface $coreSession)
+    public function __construct(\Magento\Framework\App\Action\Context $context, \Magento\Framework\View\Result\PageFactory $pageFactory, \AHT\CRUD\Model\PostFactory $postFactory, \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList, \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool, \AHT\CRUD\Model\ResourceModel\PostFactory $saveFactory, \Magento\Framework\App\Request\Http $request, \Magento\Framework\Registry $coreRegistry, \Magento\Framework\Session\SessionManagerInterface $coreSession)
     {
         $this->___init();
-        parent::__construct($context, $pageFactory, $postFactory, $filesystem, $cacheTypeList, $cacheFrontendPool, $saveFactory, $coreSession);
+        parent::__construct($context, $pageFactory, $postFactory, $cacheTypeList, $cacheFrontendPool, $saveFactory, $request, $coreRegistry, $coreSession);
     }
 
     /**
